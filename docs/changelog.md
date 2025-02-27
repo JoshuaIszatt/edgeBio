@@ -1,0 +1,1 @@
+> Changelog will be implemented in later development phases
