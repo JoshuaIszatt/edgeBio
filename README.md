@@ -11,6 +11,12 @@
 ## Description: 
 A local edge computing application for running bioinformatics pipelines. This system processes sequencing data using a queue-based architecture with a broker, integrating a Next.js frontend, an Express.js backend, and Python processing scripts. 
 
+**Minimum viable product:** 
+1. User must be able to upload files to a set location on the server
+2. User must be able to run a bioinformatics pipeline on server-side files
+3. User must be able to see the progress of the pipeline in real time
+4. User must be able to download the results 
+
 ## Documentation
 - [About](docs/about.md) - Overview of the project, its purpose, and key features.
 - [API Reference](docs/api_reference.md) - Details on API endpoints and WebSocket communication.
