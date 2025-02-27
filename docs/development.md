@@ -39,12 +39,12 @@ Added initial documentation templates for various components including coding co
 ```
 ***
 
-### Python conventions
+### Python 
 - Follow PEP 8 guidelines (https://peps.python.org/pep-0008/).
 - Use type hints where possible.
 - Write docstrings for all public modules, classes, and functions.
 
-### JavaScript copnventions
+### JavaScript
 - Write JSDoc comments for all functions and classes (https://jsdoc.app/about-getting-started).
 
 ## Development Environment
