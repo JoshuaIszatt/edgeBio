@@ -15,6 +15,10 @@ This application provides a local, easy-to-use platform for running bioinformati
 ## System Architecture
 The system consists of a Next.js frontend for user interaction, an Express.js backend handling API requests and authentication, and a Python-based processing engine for executing bioinformatics workflows. A message broker manages job queues and WebSockets to provide real-time feedback.
 
+<img src="./img/image_placeholder.png" width="500" />
+
+> [For more detail: ](architecture.md) - System architecture, component diagrams.
+
 ## Technologies Used
 - **Frontend:** Next.js
 - **Backend:** Express.js, Node.js
