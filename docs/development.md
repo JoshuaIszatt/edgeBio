@@ -8,7 +8,9 @@ Use conventional commit message format - https://www.conventionalcommits.org/en/
 **Layout:**
 ```
 <type>[optional scope]: <description>
+
 [optional body]
+
 [optional footer(s)]
 ```
 ***
