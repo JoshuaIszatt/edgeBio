@@ -6,7 +6,7 @@
 
 ![EdgeBio Logo](docs/img/logo_placeholder.png)
 
-> **Development Status :: - Beta**
+> **Development Status :: - Alpha**
 
 ## Description: 
 A local edge computing application for running bioinformatics pipelines. This system processes sequencing data using a queue-based architecture with a broker, integrating a Next.js frontend, an Express.js backend, and Python processing scripts. 
