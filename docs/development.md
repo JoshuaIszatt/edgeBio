@@ -7,7 +7,9 @@ Use semantic versioning format - https://semver.org/
 
 **Release timeline**
 > February 2025: Alpha (0.0.1-alpha) – Internal testing, early development.
+
 > March 2025: Beta (0.0.1-beta) – Your MVP release, with core functionality but not all features.
+
 > September 2025: Production (0.0.1) – First stable release, ready for real-world use.
 
 ### Git commit format
