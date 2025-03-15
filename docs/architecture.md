@@ -12,6 +12,12 @@
 
 <img src="img/image_placeholder.png" width="300" />
 
+## Database diagram
+* This diagram provides an overview of the database, key based relationships, and how subdocuments are nested.
+* This database diagram does not include how rules are enforced or pre/post hooks.
+
+<img src="img/image_placeholder.png" width="300" />
+
 ## Deployment diagram
 * Useful if the system will be distributed (e.g., frontend on a different server from the backend or database).
 * The diagram will explicitly show server-side and client-side architecture
