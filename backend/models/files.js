@@ -24,6 +24,10 @@ const fileSchema = new Schema({
     paired: {
         type: Boolean,
         default: false
+    },
+    filepath: {
+        type: String,
+        required: false
     }
     /* ADD NEXT
     hashkey: {

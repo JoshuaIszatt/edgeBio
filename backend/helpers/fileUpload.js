@@ -1,7 +1,7 @@
 const multer = require('multer');
-const path = require('path');
 
 // Get path from .env
+const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const uploadPath = process.env.UPLOAD_PATH;
 
