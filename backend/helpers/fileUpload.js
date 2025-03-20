@@ -1,10 +1,21 @@
 const multer = require('multer');
 const path = require('path');
 
+// Get path from .env
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+const uploadPath = process.env.UPLOAD_PATH;
+
+// Check if the upload directory location exists, if not, create it
+const fs = require('fs');
+if (!fs.existsSync
+    (uploadPath)) {
+    fs.mkdirSync(uploadPath);
+}
+
 // Create multer CONFIG for storage var
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Save files to the 'uploads' directory
+        cb(null, uploadPath); // Save files to the 'uploads' directory
     },
     filename: (req, file, cb) => {
         const uniqueName = Date.now() + `_${file.originalname}`;
