@@ -1,0 +1,26 @@
+/*
+Footer 
+*/
+
+footer {
+  color: gray;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2rem auto;
+  max-width: 80rem;
+}
+
+/* Footer Left Section */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer Right Section */
+.footer-right {
+  display: flex;
+  gap: 1rem;
+}

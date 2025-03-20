@@ -1,0 +1,63 @@
+/*
+NavBar 
+*/
+
+/* NavBar display */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* NavBar Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left pre {
+  margin-left: 1rem;
+}
+
+/* NavBar Right Section */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.navbar-right a:hover {
+  color: red;
+}
+
+/* General Navigation Styles */
+nav {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 2rem auto;
+  max-width: 80rem;
+}
+
+nav a, nav span {
+  color: #6b7280;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Main Navigation Styles */
+main nav {
+  border: 0;
+}
