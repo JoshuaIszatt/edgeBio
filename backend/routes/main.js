@@ -28,6 +28,7 @@ FILESYSTEM
 */
 
 router.get('/files', filesMetadata_controller.getFiles);
+router.delete('/files/:id', filesMetadata_controller.deleteFile);
 
 
 // Export router
