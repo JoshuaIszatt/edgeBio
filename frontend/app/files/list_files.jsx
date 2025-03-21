@@ -34,20 +34,19 @@ export default async function List_files() {
   const data = files_metadata.files
 
   // DEBUG
-  console.log(data)
+  //console.log(data)
 
   // Return data
   return (
     <>
     {/* Display files metadata */}
       {data.map((file) => (
-        <div key={file.id}>
+        <div className="fileBox" key={file._id}>
           <h2>{file.filename}</h2>
-          <p>{file.filetype}</p>
-          <p>{file.upload_at}</p>
-          <p>{file.size}</p>
-          <p>{file.filepath}</p>
-          <br />
+          <p>Filepath: {file.filepath}</p>
+          <p>File type: {file.filetype}</p>
+          <p>Time of upload: {file.upload_at}</p>
+          <p>File size (bytes): {file.size}</p>
         </div>
       ))}
 

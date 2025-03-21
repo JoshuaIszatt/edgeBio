@@ -8,9 +8,27 @@ export default function files() {
     <main>
         
         {/* Nav display */}
+        <h1>Filesystem contents:</h1>
         <nav>
-          <h1>Filesystem contents</h1>
-          <Link href="ENDPOINT">Upload file</Link>
+          <Link href="ENDPOINT">
+            <button>Upload</button>
+          </Link>
+
+          <Link href="ENDPOINT">
+            <button>Delete</button>
+          </Link>
+
+          {/* ADD UPDATE BUTTON  
+          <Link href="ENDPOINT">
+            <button>Update</button>
+          </Link>
+          */}
+
+          {/* ADD ARCHIVE BUTTON  
+          <Link href="ENDPOINT">
+            <button>Archive</button>
+          </Link>
+          */}
         </nav>
 
         {/* Import files metadata */}

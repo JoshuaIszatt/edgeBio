@@ -21,3 +21,41 @@ main {
   padding: 0 1rem;
 }
 
+/* Files navbar */
+
+button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 12px;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Files box */
+
+.fileBox {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #d3d3d3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fileBox h2 {
+  margin: 0 0 8px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.fileBox p {
+  margin: 1px 0;
+  font-size: 1em;
+  color: #666;
+}
