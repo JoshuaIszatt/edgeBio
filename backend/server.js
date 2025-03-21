@@ -36,7 +36,7 @@ mongoose.connect(dbURI)
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
-// Import routes
+// Import router
 const mainRoutes = require('./routes/main');
 
 // Use routes

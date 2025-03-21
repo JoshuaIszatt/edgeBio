@@ -3,19 +3,32 @@ const { Router } = require('express')
 const router = Router();
 
 /*
-Import main controllers
+Import controllers
 */
 
 const home_controller = require('../controllers/home');
 const upload_controller = require('../controllers/upload');
+const filesMetadata_controller = require('../controllers/filesMetadata');
 
 /*
-Use main controllers
+HOME
 */
 
 router.get('/', home_controller.home);
+
+/*
+UPLOADS
+*/
+
 router.post('/upload', upload_controller.uploadFile);
 router.post('/upload-pair', upload_controller.uploadFilePair);
+
+/*
+FILESYSTEM
+*/
+
+router.get('/files', filesMetadata_controller.getFiles);
+
 
 // Export router
 module.exports = router;
