@@ -40,6 +40,7 @@ button:hover {
 /* Files box */
 
 .fileBox {
+  position: relative;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
@@ -58,4 +59,23 @@ button:hover {
   margin: 1px 0;
   font-size: 1em;
   color: #666;
+}
+
+/* Files list delete button */
+
+.delete-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff4d4d;
 }
