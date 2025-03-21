@@ -10,12 +10,8 @@ export default function files() {
         {/* Nav display */}
         <h1>Filesystem contents:</h1>
         <nav>
-          <Link href="ENDPOINT">
+          <Link href="/files/upload">
             <button>Upload</button>
-          </Link>
-
-          <Link href="ENDPOINT">
-            <button>Delete</button>
           </Link>
 
           {/* ADD UPDATE BUTTON  

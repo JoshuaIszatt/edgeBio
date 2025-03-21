@@ -1,3 +1,5 @@
+import DeleteMetadata from "./components/Delete"
+
 // Function to get files metadata
 async function get_metadata() {
   try {
@@ -47,6 +49,9 @@ export default async function List_files() {
           <p>File type: {file.filetype}</p>
           <p>Time of upload: {file.upload_at}</p>
           <p>File size (bytes): {file.size}</p>
+
+          {/* Delete button */}
+          <DeleteMetadata id={file._id} />
         </div>
       ))}
 
