@@ -10,7 +10,7 @@ async function get_metadata() {
       const url = 'http://localhost:4000/files'
       const res = await fetch(url, {
           next: {
-              revalidate: 0 // This will not revalidate the data
+              revalidate: 0
           }
       })
 

@@ -1,37 +1,36 @@
 import Link from "next/link";
-import List_files from "./list_files"; 
-import { Suspense } from "react";
+import List_files from "./list_files";
+import { Suspense, use } from "react";
 import Loading from "../loading";
+import UploadModal from "./components/Upload";
 
 export default function files() {
   return (
     <main>
-        
-        {/* Nav display */}
-        <h1>Filesystem contents:</h1>
-        <nav>
-          <Link href="/files/upload">
-            <button>Upload</button>
-          </Link>
 
-          {/* ADD UPDATE BUTTON  
+      {/* Nav display */}
+      <h1>Filesystem contents:</h1>
+      <nav>
+        <UploadModal />
+
+        {/* ADD UPDATE BUTTON  
           <Link href="ENDPOINT">
             <button>Update</button>
           </Link>
           */}
 
-          {/* ADD ARCHIVE BUTTON  
+        {/* ADD ARCHIVE BUTTON  
           <Link href="ENDPOINT">
             <button>Archive</button>
           </Link>
           */}
-        </nav>
+      </nav>
 
-        {/* Import files metadata */}
-        <Suspense fallback={<Loading />}>
-          <List_files />
-        </Suspense>
-        
-    </main>  
+      {/* Import files metadata */}
+      <Suspense fallback={<Loading />}>
+        <List_files />
+      </Suspense>
+
+    </main>
   )
 }
