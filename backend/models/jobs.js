@@ -1,7 +1,20 @@
 const { Schema, model } = require('mongoose');
 const path = require('path');
+const { finished } = require('stream');
 
 const jobSchema = new Schema({
+    name: {
+        type: String,
+        required: false
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    priority: {
+        type: Boolean,
+        default: false
+    },
     /*
     submit_by: {
         type: Schema.Types.ObjectId,
@@ -30,7 +43,8 @@ const jobSchema = new Schema({
     status: {
         type: String,
         enum: ['pending', 'processing', 'finished'],
-        required: true
+        required: true,
+        default: 'pending'
     },
     /*
     log: [{
@@ -41,12 +55,23 @@ const jobSchema = new Schema({
     created_at: {
         type: Date,
         default: Date.now
+    },
+    finished_at: {
+        type: Date,
+        default: null
     }
 });
 
 jobSchema.pre('save', function(next) {
     if (this.isNew) {
         console.log('A new job has been created:', this._id);
+    }
+    next();
+});
+
+jobSchema.pre('save', function(next) {
+    if (this.isModified('status') && this.status === 'finished') {
+        this.finished_at = Date.now();
     }
     next();
 });

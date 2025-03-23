@@ -37,7 +37,6 @@ JOBS
 
 router.get('/jobs', broker.get_jobs);
 router.post('/jobs', broker.create_job);
-router.put('/jobs/:id', broker.update_job);
 router.delete('/jobs/:id', broker.delete_job);
 
 // Export router
