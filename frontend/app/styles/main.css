@@ -118,3 +118,60 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+/* Create modal component*/
+
+.create-modal-content {
+  background-color: #302f2f;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #888;
+  width: 50%;
+  height: 50%; /* Increased height */
+}
+
+.create-modal-content label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 3px; 
+}
+
+.create-modal-content button {
+  margin-top: 20px;
+}
+
+
+/* Jobs boxes */
+
+.jobBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jobBox {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 1px 0;
+  background-color: #424242;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.priority-jobBox {
+  position: relative;
+  border: 2px solid #ff0000;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 1px 0;
+  background-color: #424242;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.priority-jobBox h4 {
+  color: #ff0000;
+}
