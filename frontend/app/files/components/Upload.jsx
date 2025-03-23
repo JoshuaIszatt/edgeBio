@@ -31,8 +31,7 @@ export default function UploadModal() {
       });
 
       if (response.ok) {
-        console.log("File uploaded successfully!");
-        alert("File uploaded successfully!");
+        console.log("File uploaded successfully");
         closeModal();
       } else {
         console.log("Failed to upload")

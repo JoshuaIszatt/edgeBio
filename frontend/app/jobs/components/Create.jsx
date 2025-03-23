@@ -27,7 +27,13 @@ export default function CreateModal() {
                 const response = await fetch("http://localhost:4000/files");
                 if (response.ok) {
                     const data = await response.json();
-                    setFileOptions(data);
+                    
+                    // DEBUG
+                    console.log("DEBUG")
+                    console.log(data);
+                    console.log("DEBUG")
+
+                    setFileOptions(data.files || []);
                 } else {
                     console.error("Failed to fetch file options");
                 }
@@ -52,7 +58,7 @@ export default function CreateModal() {
         };
 
         try {
-            const response = await fetch("http://localhost:4000/create-job", {
+            const response = await fetch("http://localhost:4000/jobs", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -85,23 +91,29 @@ export default function CreateModal() {
                 <span className="close" onClick={closeModal}>&times;</span>
                 <h2>Create Job</h2>
                 <form onSubmit={handleSubmit}>
+
                     <div>
+                        {/* Name input */}
                         <label htmlFor="name">Name:</label>
                         <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
+                        {/* Description input */}
                         <label htmlFor="description">Description:</label>
                         <input type="text" id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
 
+                        {/* Priority checkbox */}
                         <label htmlFor="priority">Priority:</label>
                         <input type="checkbox" id="priority" name="priority" checked={priority} onChange={(e) => setPriority(e.target.checked)} />
 
+                        {/* File options */}
                         <label htmlFor="files">Files:</label>
                         <select multiple id="files" name="files" value={files} onChange={(e) => setFiles(Array.from(e.target.selectedOptions, option => option.value))} required>
                             {fileOptions.map((file) => (
                                 <option key={file.filepath} value={file.filepath}>{file.filepath}</option>
                             ))}
                         </select>
-
+                        
+                        {/* Pipeline select */}
                         <label htmlFor="pipeline">Pipeline:</label>
                         <select id="pipeline" name="pipeline" value={pipeline} onChange={(e) => setPipeline(e.target.value)} required>
                             <option value="phanta">Phanta</option>
@@ -109,6 +121,8 @@ export default function CreateModal() {
                             <option value="test">Test</option>
                         </select>
                     </div>
+
+                    {/* Submit button */}
                     <button type="submit">Create</button>
                 </form>
             </div >
