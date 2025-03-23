@@ -1,4 +1,3 @@
-import Link from "next/link";
 import List_files from "./list_files";
 import { Suspense, use } from "react";
 import Loading from "../loading";
