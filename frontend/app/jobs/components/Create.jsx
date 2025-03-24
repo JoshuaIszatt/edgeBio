@@ -27,12 +27,6 @@ export default function CreateModal() {
                 const response = await fetch("http://localhost:4000/files");
                 if (response.ok) {
                     const data = await response.json();
-                    
-                    // DEBUG
-                    console.log("DEBUG")
-                    console.log(data);
-                    console.log("DEBUG")
-
                     setFileOptions(data.files || []);
                 } else {
                     console.error("Failed to fetch file options");
@@ -67,8 +61,7 @@ export default function CreateModal() {
             });
 
             if (response.ok) {
-                console.log("Job created successfully!");
-                alert("Job created successfully!");
+                console.log("Job created");
                 closeModal();
             } else {
                 console.log("Failed to create job");
