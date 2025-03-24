@@ -45,7 +45,7 @@ NOTIFICATIONS
 */
 
 router.get('/notifications', notification_controller.get_notifications);
-router.post('/notifications', notification_controller.create_notification);
+router.post('/notifications', notification_controller.handle_notification);
 
 // Export router
 module.exports = router;

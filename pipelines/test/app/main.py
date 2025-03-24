@@ -10,38 +10,36 @@ CORS(app)
 # Functions
 def process_thread(data):
     # Simulate processing time
-    time.sleep(10)
+    time.sleep(15)
 
     # Log processing start
     with open('./message_log.txt', 'a') as log_file:
         log_file.write(f"{data['_id']}\t{data['name']}\tPROCESSING\n")
 
     # Send "data processing" notification
-    """
     notification = {
         "job": data["_id"],
         "notification": "Data processing",
-        "status": "processing"
+        "status": "processing",
+        "logging_level": "info",
     }
-    requests.post('http://localhost:4000/notifications', json=notification)"
-    """
+    requests.post('http://localhost:4000/notifications', json=notification)
 
     # Process file
-    time.sleep(10)
+    time.sleep(15)
 
     # Log processing end
     with open('./message_log.txt', 'a') as log_file:
         log_file.write(f"{data['_id']}\t{data['name']}\tFINISHED\n")
     
     # Send "completed" notification
-    """
     notification = {
         "job": data["_id"],
         "notification": "Processing completed",
         "status": "finished"
     }
-    requests.post('http://localhost:4000/notifications', json=notification)"
-    """
+    requests.post('http://localhost:4000/notifications', json=notification)
+
 
 # Home
 @app.route('/')
