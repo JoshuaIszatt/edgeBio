@@ -4,7 +4,7 @@
 * High-level depiction of the system, its layout, and key components. 
 * This section provides an overview of how data flows between the user and the system.
 
-<img src="img/image_placeholder.png" width="300" />
+<img src="img/system_architecture.png" width="300" />
 
 ## Application diagram
 * This diagram provides a top-level view of the software architecture, showing the core application and where the plugin extensions sit.
