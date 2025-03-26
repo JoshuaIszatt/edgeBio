@@ -14,7 +14,7 @@ A local edge computing application for running bioinformatics pipelines. This sy
 **Minimum viable product:** 
 1. User must be able to upload files to a set location on the server
 2. User must be able to run a bioinformatics pipeline on server-side files
-3. User must be able to see the progress of the pipeline in real time
+3. User must be able to see the progress of the pipeline 
 
 ## Documentation
 - [About](docs/about.md) - Overview of the project, its purpose, and key features.
