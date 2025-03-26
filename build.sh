@@ -2,7 +2,7 @@
 
 # Navigate to the backend directory and install packages
 echo "Installing backend packages..."
-cd ../backend/
+cd ./backend/
 npm install
 
 echo ">>>"
@@ -11,7 +11,7 @@ echo ">>>"
 
 # Navigate to the frontend directory and install packages
 echo "Installing frontend packages..."
-cd frontend/
+cd ../frontend/
 npm install
 
 echo ">>>"
