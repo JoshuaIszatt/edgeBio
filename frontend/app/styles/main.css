@@ -102,7 +102,6 @@ button:hover {
   padding: 20px;
   border: 2px solid #888;
   width: 75%;
-  height: 20%;
 }
 
 .close {
@@ -128,7 +127,6 @@ button:hover {
   padding: 20px;
   border: 2px solid #888;
   width: 50%;
-  height: 50%;
 }
 
 .create-modal-content label {

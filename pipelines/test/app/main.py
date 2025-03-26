@@ -36,9 +36,14 @@ def process_thread(data):
     notification = {
         "job": data["_id"],
         "notification": "Processing completed",
-        "status": "finished"
+        "status": "finished",
+        "logging_level": "info",
     }
     requests.post('http://localhost:4000/notifications', json=notification)
+    
+    # Log processing end
+    with open('./message_log.txt', 'a') as log_file:
+        log_file.write(f"{data['_id']}\t{data['name']}\tEND PIPELINE\n")
 
 
 # Home
