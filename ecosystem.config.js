@@ -31,7 +31,7 @@ module.exports = {
             script: 'python3',
             interpeter_args: '-u',
             args: 'main.py',
-            cwd: './pipelines/test/app',
+            cwd: './pipelines/pyTEST/app',
             watch: true,
             output: "../../../logs/pipelines.log",
             error_file: "../../../logs/pipelines-error.log"
