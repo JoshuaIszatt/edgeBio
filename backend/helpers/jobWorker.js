@@ -1,6 +1,6 @@
-async function sendJobData(jobData) {
+async function sendJobData(jobData, host, port) {
     try {
-        const response = await fetch('http://127.0.0.1:5000/process_job', {
+        const response = await fetch(`http://${host}:${port}/process_job`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

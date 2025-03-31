@@ -1,11 +1,18 @@
 const Job = require('../models/jobs');
 
-// Get path from .env
+// Get path from environment variables
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const uploadPath = process.env.UPLOAD_PATH;
+
+// Import job worker
 const sendJobData = require('../helpers/jobWorker');
 
+// Set host and port
+host = process.env.pyTEST_HOST || '127.0.0.1';
+port = process.env.pyTEST_PORT || 5000;
+
+// DEBUG
 console.log('sendJobData:', sendJobData); // Add this line to debug
 
 /*
@@ -19,7 +26,7 @@ module.exports.create_job = async (req, res) => {
 
         // Send job data after job is created
         try {
-            const response = await sendJobData(job);
+            const response = await sendJobData(job, host, port);
             console.log('Job data sent successfully:', response);
         } catch (error) {
             console.error('Error sending job data:', error);

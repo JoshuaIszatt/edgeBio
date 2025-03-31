@@ -1,10 +1,14 @@
 import DeleteJob from "./components/Delete"
 
+// Destination
+const host = process.env.API_HOST || 'localhost'
+const port = process.env.API_PORT || '4000'
+
 // Function to get jobs metadata
 async function get_jobs() {
   try {
-      // Get data
-      const url = 'http://localhost:4000/jobs'
+      // Endpoint
+      const url = `http://${host}:${port}/jobs`
       const res = await fetch(url, {
           next: {
               revalidate: 0
@@ -55,7 +59,7 @@ export default async function List_jobs() {
           <p>Status: <strong>{job.status}</strong></p>
 
           {/* Delete button */}
-          <DeleteJob id={job._id} />
+          <DeleteJob id={job._id} host={host} port={port} />
 
         </div>
       ))}

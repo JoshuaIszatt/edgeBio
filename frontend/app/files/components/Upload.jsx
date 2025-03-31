@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function UploadModal() {
+export default function UploadModal({ host, port }) {
 
   // Modal component state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,8 +24,11 @@ export default function UploadModal() {
     const formData = new FormData();
     formData.append("file", file);
 
+    // Set destination
+    const url = `http://${host}:${port}/upload`
+
     try {
-      const response = await fetch("http://localhost:4000/upload", {
+      const response = await fetch(url, {
         method: "POST",
         body: formData,
       });
@@ -40,7 +43,7 @@ export default function UploadModal() {
       console.log(response)
     } catch (error) {
       console.error("Error uploading file:", error);
-      alert("An error occurred while uploading the file.");
+      alert(`An error occurred while uploading the file.\n${error}`);
     }
   };
 

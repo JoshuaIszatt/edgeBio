@@ -3,11 +3,12 @@
 {/* useRouter hook enables router object functions */}
 import { useRouter } from "next/navigation"
 
-export default function DeleteMetadata({ id }) {
+export default function DeleteMetadata({ id, host, port }) {
     const router = useRouter();
 
     const handleDelete = async () => {
-        const url = `http://localhost:4000/files/${id}`;
+        // Set destination
+        const url = `http://${host}:${port}/files/${id}`;
         const res = await fetch(url, {
             method: "DELETE",
         });

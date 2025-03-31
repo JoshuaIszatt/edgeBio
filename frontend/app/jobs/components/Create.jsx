@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function CreateModal() {
-
+export default function CreateModal({ host, port }) {
     // Modal component state
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
@@ -20,11 +19,14 @@ export default function CreateModal() {
     const [pipeline, setPipeline] = useState("test");
     const [fileOptions, setFileOptions] = useState([]);
 
+    // Endpoint
+    const url = `http://${host}:${port}`;
+
     // Fetch file options from the API
     useEffect(() => {
         const fetchFileOptions = async () => {
             try {
-                const response = await fetch("http://localhost:4000/files");
+                const response = await fetch(`${url}/files`);
                 if (response.ok) {
                     const data = await response.json();
                     setFileOptions(data.files || []);
@@ -52,7 +54,7 @@ export default function CreateModal() {
         };
 
         try {
-            const response = await fetch("http://localhost:4000/jobs", {
+            const response = await fetch(`${url}/jobs`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -7,7 +7,12 @@ const cors = require('cors');
 
 // Load environmental variables
 require('dotenv').config();
+
+// Set host and port for the server
+const host = process.env.HOST;
 const port = process.env.PORT;
+
+// Set database URI
 const dbURI = process.env.DB_URI_LOCAL;
 
 // Logging the date
@@ -33,7 +38,7 @@ app.use(limiter);
 
 // Connect to mongoDB (Also starts the server)
 mongoose.connect(dbURI)
-  .then((result) => app.listen(port))
+  .then((result) => app.listen(port, host))
   .catch((err) => console.log(err));
 
 // Import router
@@ -43,4 +48,4 @@ const mainRoutes = require('./routes/main');
 app.use('/', mainRoutes);
 
 // Display port connection
-console.log(`Server running on http://localhost:${port}`);
+console.log(`Server running on http://${host}:${port}`);

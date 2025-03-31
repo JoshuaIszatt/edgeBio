@@ -3,11 +3,12 @@
 {/* useRouter hook enables router object functions */}
 import { useRouter } from "next/navigation"
 
-export default function DeleteJob({ id }) {
+export default function DeleteJob({ id, host, port }) {
     const router = useRouter();
 
     const handleDelete = async () => {
-        const url = `http://localhost:4000/jobs/${id}`;
+        // Endpoint
+        const url = `http://${host}:${port}/jobs/${id}`;
         const res = await fetch(url, {
             method: "DELETE",
         });

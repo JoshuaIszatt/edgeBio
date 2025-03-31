@@ -4,13 +4,17 @@ import Loading from "../loading";
 import UploadModal from "./components/Upload";
 
 export default function files() {
+  // Define host and port
+  const host = process.env.API_HOST || 'localhost'
+  const port = process.env.API_PORT || '4000'
+
   return (
     <main>
 
       {/* Nav display */}
       <h1>Filesystem contents:</h1>
       <nav>
-        <UploadModal />
+        <UploadModal host={host} port={port} />
 
         {/* ADD UPDATE BUTTON  
           <Link href="ENDPOINT">
