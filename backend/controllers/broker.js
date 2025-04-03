@@ -8,12 +8,9 @@ const uploadPath = process.env.UPLOAD_PATH;
 // Import job worker
 const sendJobData = require('../helpers/jobWorker');
 
-// Set host and port
-host = process.env.pyTEST_HOST || '127.0.0.1';
-port = process.env.pyTEST_PORT || 5000;
-
-// DEBUG
-console.log('sendJobData:', sendJobData); // Add this line to debug
+// Set plugin host and port
+host = process.env.test_plugin_HOST || '127.0.0.1';
+port = process.env.test_plugin_PORT || 5000;
 
 /*
 Job control

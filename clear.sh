@@ -15,7 +15,8 @@ while true; do
     read -r answer
     if [[ $answer == "Y" || $answer == "y" ]]; then
         echo "Clearing filesystem:"
-        rm -rf ./backend/filesystem*
+        ls ./backend/filesystem/*
+        rm ./backend/filesystem/*
         break
     elif [[ $answer == "N" || $answer == "n" ]]; then
         echo "Filesystem not cleared"
