@@ -6,8 +6,8 @@ ls logs/*.log
 rm logs/*.log
 
 echo "Clearing temporary file:"
-ls ./pipelines/pyTEST/app/message_log.txt
-rm ./pipelines/pyTEST/app/message_log.txt
+ls ./pipelines/test_plugin/app/message_log.txt
+rm ./pipelines/test_plugin/app/message_log.txt
 
 # Ask to remove (Y/N) filesystem from backend
 while true; do
