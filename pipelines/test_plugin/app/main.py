@@ -57,7 +57,27 @@ def process_thread(data):
 # Home
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return {
+        # Plugin information
+        "name": "pyTEST",
+        "version": "0.1",
+        "description": "This is a test / template pipeline for edgeBIO plugins.",
+        # Pipeline input
+        "input": {
+            "requires_file": False,
+            "file_types": None
+        },
+        # Pipeline output
+        "output": {
+            "notifications": True,
+            "data": False
+        },
+        # Endpoints
+        "endpoints": {
+            "home": "/",
+            "process_job": "/process_job",
+        }
+    }
 
 # Process job
 @app.route('/process_job', methods=['POST'])
