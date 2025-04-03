@@ -1,2 +1,3 @@
 # Ignore log file
 message_log.txt
+__pycache__/
