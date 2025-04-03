@@ -1,45 +1,45 @@
 import requests
-import time
-from config import api_host, api_port
 
-# Functions
-def process_thread(data):
-    # API (backend) configuration
-    url = f'http://{api_host}:{api_port}/notifications'
-    
-    # Simulate processing time
-    time.sleep(10)
 
-    # Log processing start
+def write_log(message):
     with open('./message_log.txt', 'a') as log_file:
-        log_file.write(f"{data['_id']}\t{data['name']}\tPROCESSING\n")
+        # Data received
+        log_file.write(f"{message}\n")
 
-    # Send "data processing" notification
+
+def send_notification(url, id, status_update):
+    write_log(f"DEBUG: sending {status_update} status update to {url}")
     notification = {
-        "job": data["_id"],
+        "job": id,
         "notification": "Data processing",
-        "status": "processing",
+        "status": status_update,
         "logging_level": "info",
     }
-    requests.post(url, json=notification)
+    try:
+        response = requests.post(url, json=notification)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to send notification: {e}")
 
-    # Process file
-    time.sleep(10)
 
-    # Log processing end
-    with open('./message_log.txt', 'a') as log_file:
-        log_file.write(f"{data['_id']}\t{data['name']}\tFINISHED\n")
+def assess_job_request(job=None):
+    """
+    Assess the job request for:
+        - _id
     
-    # Send "completed" notification
-    notification = {
-        "job": data["_id"],
-        "notification": "Processing completed",
-        "status": "finished",
-        "logging_level": "info",
-    }
-    requests.post(url, json=notification)
+    Return:
+        - True if the job request is valid, False otherwise.
+    """
+    if job is None:
+        write_log("Job request is None")
+        return False
     
-    # Log processing end
-    with open('./message_log.txt', 'a') as log_file:
-        log_file.write(f"{data['_id']}\t{data['name']}\tEND PIPELINE\n")
+    if not isinstance(job, dict):
+        write_log(f"Job request is not a dictionary: {job}")
+        return False
     
+    if '_id' not in job:
+        write_log(f"Job request does not contain '_id': {job}")
+        return False
+
+    return True

@@ -1,8 +1,8 @@
 from flask import request, jsonify
 from config import app, api_host, api_port
 import threading
-from functions import process_thread
-
+from controllers import handle_job_request
+from functions import write_log
 
 @app.route('/')
 def home():
@@ -28,23 +28,21 @@ def home():
         }
     }
 
+
 @app.route('/process_job', methods=['POST'])
-def handle_job_request():
-
-    # Get data from request
-    data = request.get_json()
+def process_job():
     
-    # Print to console
-    print(data)
+    # Get the job data from the request
+    job = request.get_json()
     
-    # Write to log file
-    with open('./message_log.txt', 'a') as log_file:
-        # Data received
-        log_file.write(f"{data['_id']}\t{data['name']}\tRECEIVED\n")
+    # DEBUG
+    write_log("Received job data")
+    write_log(job)
+    
+    # Handle the job request
+    thread = threading.Thread(target=handle_job_request, args=(job, api_host, api_port,))
+    thread.start()
+    
+    # Response
+    return jsonify({"status": "success", "received": job}), 200
 
-        # Create a new thread to process the job
-        thread = threading.Thread(target=process_thread, args=(data,))
-        thread.start()
-        
-        # Return response
-        return jsonify({"status": "success", "received": data}), 200
